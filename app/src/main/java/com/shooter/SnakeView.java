@@ -606,32 +606,33 @@ public class SnakeView extends TileView {
 
         // grab the snake by the head
         Coordinate head = mSnakeTrail.get(0);
-        Coordinate newHead = new Coordinate(1, 1);
+        Coordinate newHead = head;
 
         mDirection = mNextDirection;
 
         switch (mDirection) {
         case EAST: {
-            newHead = new Coordinate(head.x + 1, head.y);
-            addBullet();
-            mNextDirection = STOP;
-            break;
+            if (newHead.x < mXTileCount - 2) {
+                newHead = new Coordinate(head.x + 1, head.y);
+                addBullet();
+                mNextDirection = STOP;
+                break;
+            }
         }
         case WEST: {
-            newHead = new Coordinate(head.x - 1, head.y);
-            addBullet();
-            mNextDirection = STOP;
-            break;
+            if (head.x > 1) {
+                newHead = new Coordinate(head.x - 1, head.y);
+                addBullet();
+                mNextDirection = STOP;
+                break;
+            }
         }
         case NORTH: {
-            newHead = new Coordinate(head.x, head.y - 1);
-            addBullet();
+
             mNextDirection = STOP;
             break;
         }
         case SOUTH: {
-            newHead = new Coordinate(head.x, head.y + 1);
-            addBullet();
             mNextDirection = STOP;
             break;
         }
