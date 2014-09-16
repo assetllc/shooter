@@ -21,6 +21,18 @@
      to come from a domain that you own or have control over. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shooter">
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+
+    <!-- Used to request banner and interstitial ads. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Used to avoid sending an ad request if there is no connectivity. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
     <application android:label="Snake on a Phone">
       <activity android:name="com.shooter.Snake"
         android:theme="@android:style/Theme.NoTitleBar"
@@ -31,5 +43,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BannerXmlActivity"
+            />
+
+
+        <!-- Activity required to show ad overlays. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+
     </application>
 </manifest> 

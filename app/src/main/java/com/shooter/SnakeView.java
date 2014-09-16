@@ -411,8 +411,8 @@ public class SnakeView extends TileView {
 
         }
         if (newMode == LOSE) {
-            str = res.getString(R.string.mode_lose_prefix) + mScore
-                  + res.getString(R.string.mode_lose_suffix);
+            str = res.getString(R.string.mode_lose_prefix) + mScore;
+                  //+ res.getString(R.string.mode_lose_suffix);
             initNewGame();
             setMode(RUNNING);
             update();
@@ -435,7 +435,7 @@ public class SnakeView extends TileView {
         while (!found) {
             // Choose a new location for our apple
             int newX = 1 + RNG.nextInt(mXTileCount - 2);
-            int newY = 1 + RNG.nextInt(mYTileCount - 10);
+            int newY = 1 + RNG.nextInt(mYTileCount - 13);
             newCoord = new Coordinate(newX, newY);
 
             // Make sure it's not already under the snake

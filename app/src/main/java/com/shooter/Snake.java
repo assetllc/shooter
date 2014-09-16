@@ -20,6 +20,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.shooter.R;
 
 /**
@@ -34,6 +36,8 @@ import com.shooter.R;
 public class Snake extends Activity {
 
     private SnakeView mSnakeView;
+    private AdView mAdView;
+
     
     private static String ICICLE_KEY = "snake-view";
 
@@ -50,6 +54,11 @@ public class Snake extends Activity {
 
         mSnakeView = (SnakeView) findViewById(R.id.snake);
         mSnakeView.setTextView((TextView) findViewById(R.id.text));
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setAdListener(new ToastAdListener(this));
+        mAdView.loadAd(new AdRequest.Builder().build());
+
+
 
         if (savedInstanceState == null) {
             // We were just launched -- set up a new game
@@ -70,12 +79,26 @@ public class Snake extends Activity {
         super.onPause();
         // Pause the game along with the activity
         mSnakeView.setMode(SnakeView.PAUSE);
+        mAdView.pause();
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         //Store the game state
         outState.putBundle(ICICLE_KEY, mSnakeView.saveState());
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mAdView.resume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mAdView.destroy();
+        super.onDestroy();
     }
 
 }
