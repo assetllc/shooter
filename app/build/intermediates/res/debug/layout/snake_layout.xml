@@ -19,32 +19,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-<com.google.android.gms.ads.AdView
+    <com.shooter.SnakeView
+        android:background="#ffffffff"
+        android:id="@+id/snake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
 
 
-    android:id="@+id/adView"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
+        tileSize="24"
+        />
 
-    ads:adUnitId="@string/ad_unit_id"
-    ads:adSize="BANNER"/>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
 
-
-
-
-
-
-
-        <com.shooter.SnakeView
-            android:background="#ffffffff"
-            android:id="@+id/snake"
-            android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:layout_alignParentBottom="true"
+        ads:adUnitId="@string/ad_unit_id"
+        ads:adSize="BANNER"
+        />
 
 
-            tileSize="24"
-            />
+
+
+
+
+
+
 
 
 

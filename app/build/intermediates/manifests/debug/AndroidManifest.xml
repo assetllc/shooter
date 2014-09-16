@@ -34,11 +34,11 @@
     <!-- Used to avoid sending an ad request if there is no connectivity. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-
     <application android:label="Snake on a Phone" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name="com.shooter.Snake"
             android:configChanges="keyboardHidden|orientation"

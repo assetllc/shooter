@@ -36,7 +36,7 @@ import com.shooter.R;
 public class Snake extends Activity {
 
     private SnakeView mSnakeView;
-    private AdView mAdView;
+
 
     
     private static String ICICLE_KEY = "snake-view";
@@ -54,9 +54,11 @@ public class Snake extends Activity {
 
         mSnakeView = (SnakeView) findViewById(R.id.snake);
         mSnakeView.setTextView((TextView) findViewById(R.id.text));
-        mAdView = (AdView) findViewById(R.id.adView);
-        mAdView.setAdListener(new ToastAdListener(this));
-        mAdView.loadAd(new AdRequest.Builder().build());
+        AdView adView = (AdView)this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+        //adView.setAdListener(new ToastAdListener(this));
+        //mAdView.loadAd(new AdRequest.Builder().build());
 
 
 
@@ -79,7 +81,7 @@ public class Snake extends Activity {
         super.onPause();
         // Pause the game along with the activity
         mSnakeView.setMode(SnakeView.PAUSE);
-        mAdView.pause();
+        //AdView.pause();
     }
 
     @Override
@@ -92,12 +94,12 @@ public class Snake extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        mAdView.resume();
+        ///AdView.resume();
     }
 
     @Override
     protected void onDestroy() {
-        mAdView.destroy();
+        //mAdView.destroy();
         super.onDestroy();
     }
 

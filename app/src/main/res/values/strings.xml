@@ -19,6 +19,6 @@
   <string name="mode_pause">Space Shooter/nPaused</string>
   <string name="mode_lose_prefix">Score: </string>
   <string name="mode_lose_suffix">Press Up To Play</string>
-    <string name="ad_unit_id">addstringhere</string>
+    <string name="ad_unit_id">ca-app-pub-2999387372267148/7944188316</string>
     <string name="snake_layout_text_text"></string>
 </resources>
