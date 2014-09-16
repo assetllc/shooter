@@ -19,7 +19,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-    <com.shooter.SnakeView
+    <com.spaceshooter.SnakeView
         android:background="#ffffffff"
         android:id="@+id/snake"
         android:layout_width="match_parent"

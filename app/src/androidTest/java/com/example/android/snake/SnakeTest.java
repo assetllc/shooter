@@ -18,7 +18,7 @@ package com.example.android.snake;
 
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.shooter.Snake;
+import com.spaceshooter.Snake;
 
 /**
  * Make sure that the main launcher activity opens up properly, which will be

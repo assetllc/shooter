@@ -5,9 +5,9 @@ android {
     buildToolsVersion '19.1.0'
 
     defaultConfig {
-        applicationId "com.shooter"
+        applicationId "com.spaceshooter"
 
-        testApplicationId "com.shooter.tests"
+        testApplicationId "com.spaceshooter.tests"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
@@ -20,5 +20,5 @@ android {
 }
 dependencies {
 
-    compile 'com.google.android.gms:play-services:5.+'
+    compile 'com.google.android.gms:play-services:5.0+'
 }
